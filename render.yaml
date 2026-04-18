@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: moistbsit-api
+    runtime: go
+    plan: free
+    buildCommand: go build -o app ./backend
+    startCommand: ./app
+    envVars:
+      - key: ALLOWED_ORIGIN
+        value: https://moistbsit.vercel.app
