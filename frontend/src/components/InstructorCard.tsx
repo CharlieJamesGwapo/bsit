@@ -1,4 +1,5 @@
 import type { Instructor } from "../types";
+import { img } from "../lib/api";
 
 interface Props {
   instructor: Instructor;
@@ -15,7 +16,7 @@ export default function InstructorCard({ instructor }: Props) {
         </div>
         <div className="relative w-24 h-24 mx-auto rounded-full overflow-hidden border-3 border-gold/25 group-hover:border-gold/50 transition-colors duration-300 shadow-[0_0_30px_rgba(201,168,76,0.1)]">
           <img
-            src={`/images/${instructor.photo}`}
+            src={img(instructor.photo)}
             alt={instructor.name}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
           />

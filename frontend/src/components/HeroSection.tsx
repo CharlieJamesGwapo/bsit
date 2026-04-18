@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import type { Event } from "../types";
-import { api } from "../lib/api";
+import { api, img } from "../lib/api";
 
 export default function HeroSection() {
   const [events, setEvents] = useState<Event[]>([]);
@@ -48,7 +48,7 @@ export default function HeroSection() {
           <div className={`inline-block mb-5 transition-all duration-700 ease-out ${loaded ? "opacity-100 scale-100" : "opacity-0 scale-90"}`}>
             <div className="animate-float">
               <img
-                src="/images/logo.jpg"
+                src={img("logo.jpg")}
                 alt="College of Information Technology"
                 className="w-20 h-20 md:w-24 md:h-24 rounded-full mx-auto border-3 border-gold/30 shadow-[0_0_50px_rgba(201,168,76,0.12)]"
               />
@@ -144,7 +144,7 @@ export default function HeroSection() {
                     to={`/events/${event.id}`}
                     className="cursor-pointer group flex items-center gap-3 p-2 rounded-xl hover:bg-white/[0.04] transition-colors duration-200"
                   >
-                    <img src={`/images/${event.image}`} alt={event.name} className="w-9 h-9 rounded-lg object-cover flex-shrink-0 border border-white/[0.06]" />
+                    <img src={img(event.image)} alt={event.name} className="w-9 h-9 rounded-lg object-cover flex-shrink-0 border border-white/[0.06]" />
                     <div className="flex-1 min-w-0">
                       <p className="font-display text-white/80 text-[13px] font-medium truncate group-hover:text-gold transition-colors">{event.name}</p>
                       <p className="font-display text-white/20 text-[10px]">

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import CountdownTimer from "./CountdownTimer";
 import type { Event } from "../types";
+import { img } from "../lib/api";
 
 const categoryDotColors: Record<string, string> = {
   academic: "bg-teal",
@@ -44,7 +45,7 @@ export default function Timeline({ events }: Props) {
                 >
                   <div className="flex flex-col sm:flex-row">
                     <div className="sm:w-28 sm:h-28 flex-shrink-0">
-                      <img src={`/images/${event.image}`} alt={event.name} className="w-full h-full object-cover" />
+                      <img src={img(event.image)} alt={event.name} className="w-full h-full object-cover" />
                     </div>
                     <div className="p-4 flex-1">
                       <span className={`text-[10px] font-bold uppercase tracking-wider ${categoryTextColors[event.category]}`}>

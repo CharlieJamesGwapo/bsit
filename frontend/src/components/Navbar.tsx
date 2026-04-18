@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { img } from "../lib/api";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -34,7 +35,7 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex items-center justify-between h-[60px]">
             <Link to="/" className="flex items-center gap-2.5 cursor-pointer group">
-              <img src="/images/logo.jpg" alt="CIT Logo" className="h-8 w-8 rounded-full border border-gold/20 group-hover:border-gold/40 transition-colors" />
+              <img src={img("logo.jpg")} alt="CIT Logo" className="h-8 w-8 rounded-full border border-gold/20 group-hover:border-gold/40 transition-colors" />
               <span className="text-white font-display font-bold text-sm hidden sm:block tracking-tight">CIT — MOIST</span>
             </Link>
 
@@ -105,7 +106,7 @@ export default function Navbar() {
 
           {/* Bottom info */}
           <div className="mt-12 flex items-center gap-3 px-4">
-            <img src="/images/logo.jpg" alt="CIT" className="w-8 h-8 rounded-full border border-gold/15" />
+            <img src={img("logo.jpg")} alt="CIT" className="w-8 h-8 rounded-full border border-gold/15" />
             <div>
               <p className="font-display text-white/30 text-xs font-medium">College of Information Technology</p>
               <p className="font-display text-white/15 text-[10px]">IT Days 2026 — April 17-18</p>

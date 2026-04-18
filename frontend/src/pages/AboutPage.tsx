@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import SectionHeader from "../components/SectionHeader";
 import type { CollegeInfo } from "../types";
-import { api } from "../lib/api";
+import { api, img } from "../lib/api";
 
 function useInView(ref: React.RefObject<HTMLElement | null>) {
   const [inView, setInView] = useState(false);
@@ -106,7 +106,7 @@ export default function AboutPage() {
             <div className={`transition-all duration-700 delay-200 ease-out ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
               <div className="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-6 md:p-7">
                 <div className="flex items-center gap-4 mb-5 pb-5 border-b border-white/[0.05]">
-                  <img src="/images/logo.jpg" alt="CIT" className="w-12 h-12 rounded-xl border border-gold/20" />
+                  <img src={img("logo.jpg")} alt="CIT" className="w-12 h-12 rounded-xl border border-gold/20" />
                   <div>
                     <h3 className="font-display text-white font-bold text-sm">{info.name}</h3>
                     <p className="font-display text-white/30 text-xs mt-0.5">{info.institution}</p>

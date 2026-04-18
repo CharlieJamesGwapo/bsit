@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import InstructorCard from "../components/InstructorCard";
 import SectionHeader from "../components/SectionHeader";
 import type { Instructor } from "../types";
-import { api } from "../lib/api";
+import { api, img } from "../lib/api";
 
 function useInView(ref: React.RefObject<HTMLElement | null>) {
   const [inView, setInView] = useState(false);
@@ -91,7 +91,7 @@ export default function InstructorsPage() {
                 </p>
                 <div className="flex -space-x-2">
                   {instructors.slice(0, 4).map((inst) => (
-                    <img key={inst.id} src={`/images/${inst.photo}`} alt={inst.name} className="w-9 h-9 rounded-full border-2 border-navy object-cover" />
+                    <img key={inst.id} src={img(inst.photo)} alt={inst.name} className="w-9 h-9 rounded-full border-2 border-navy object-cover" />
                   ))}
                   {instructors.length > 4 && (
                     <div className="w-9 h-9 rounded-full border-2 border-navy bg-gold/20 flex items-center justify-center">

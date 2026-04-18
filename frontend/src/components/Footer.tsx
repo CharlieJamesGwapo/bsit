@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { img } from "../lib/api";
 
 export default function Footer() {
   return (
@@ -8,7 +9,7 @@ export default function Footer() {
           {/* Brand — 5 cols */}
           <div className="md:col-span-5">
             <div className="flex items-center gap-3 mb-4">
-              <img src="/images/logo.jpg" alt="CIT Logo" className="h-10 w-10 rounded-xl border border-gold/15" />
+              <img src={img("logo.jpg")} alt="CIT Logo" className="h-10 w-10 rounded-xl border border-gold/15" />
               <div>
                 <p className="font-display font-bold text-sm">College of Information Technology</p>
                 <p className="text-[11px] text-white/25 font-display">MOIST Inc.</p>

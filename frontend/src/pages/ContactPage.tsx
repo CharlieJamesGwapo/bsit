@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import ContactForm from "../components/ContactForm";
+import { img } from "../lib/api";
 
 function useInView(ref: React.RefObject<HTMLElement | null>) {
   const [inView, setInView] = useState(false);
@@ -76,7 +77,7 @@ export default function ContactPage() {
 
               {/* Logo block */}
               <div className="pt-6 border-t border-navy/[0.06] flex items-center gap-3">
-                <img src="/images/logo.jpg" alt="CIT Logo" className="w-11 h-11 rounded-xl border border-gold/20" />
+                <img src={img("logo.jpg")} alt="CIT Logo" className="w-11 h-11 rounded-xl border border-gold/20" />
                 <div>
                   <p className="font-display font-bold text-navy text-sm">College of Information Technology</p>
                   <p className="text-navy/35 text-xs font-display">MOIST Inc. — Established 2014</p>

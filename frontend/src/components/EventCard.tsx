@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import CountdownTimer from "./CountdownTimer";
 import type { Event } from "../types";
+import { img } from "../lib/api";
 
 const categoryStyles: Record<string, { badge: string; dot: string }> = {
   academic: { badge: "bg-teal/10 text-teal border-teal/15", dot: "bg-teal" },
@@ -22,7 +23,7 @@ export default function EventCard({ event }: Props) {
     >
       <div className="relative aspect-[16/10] sm:aspect-[16/9] overflow-hidden">
         <img
-          src={`/images/${event.image}`}
+          src={img(event.image)}
           alt={event.name}
           loading="lazy"
           className="w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-500 ease-out"

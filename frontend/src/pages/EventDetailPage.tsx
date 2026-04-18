@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import CountdownTimer from "../components/CountdownTimer";
 import type { Event } from "../types";
-import { api } from "../lib/api";
+import { api, img } from "../lib/api";
 
 const categoryStyles: Record<string, string> = {
   academic: "bg-teal/10 text-teal border-teal/20",
@@ -58,7 +58,7 @@ export default function EventDetailPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
             {/* Poster */}
             <div className={`rounded-2xl overflow-hidden border border-white/[0.08] shadow-2xl transition-all duration-700 ${loaded ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}>
-              <img src={`/images/${event.image}`} alt={event.name} className="w-full h-auto" />
+              <img src={img(event.image)} alt={event.name} className="w-full h-auto" />
             </div>
 
             {/* Details */}
