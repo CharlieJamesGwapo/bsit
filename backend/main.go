@@ -1,12 +1,46 @@
 package main
 
 import (
+	"embed"
+	"io/fs"
+	"net/http"
 	"os"
+	"path/filepath"
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"moist-cit-website/backend/handlers"
 )
+
+//go:embed data
+var embeddedDataFS embed.FS
+
+//go:embed static/images
+var embeddedImagesFS embed.FS
+
+func extractDataToTempDir() string {
+	tmpDir, err := os.MkdirTemp("", "bsit-data-")
+	if err != nil {
+		panic(err)
+	}
+	entries, err := fs.ReadDir(embeddedDataFS, "data")
+	if err != nil {
+		panic(err)
+	}
+	for _, entry := range entries {
+		if entry.IsDir() {
+			continue
+		}
+		content, err := fs.ReadFile(embeddedDataFS, "data/"+entry.Name())
+		if err != nil {
+			panic(err)
+		}
+		if err := os.WriteFile(filepath.Join(tmpDir, entry.Name()), content, 0644); err != nil {
+			panic(err)
+		}
+	}
+	return tmpDir
+}
 
 func main() {
 	port := os.Getenv("PORT")
@@ -19,6 +53,13 @@ func main() {
 		allowed = "http://localhost:5173"
 	}
 
+	handlers.DataDir = extractDataToTempDir()
+
+	imagesFS, err := fs.Sub(embeddedImagesFS, "static/images")
+	if err != nil {
+		panic(err)
+	}
+
 	r := gin.Default()
 
 	r.Use(cors.New(cors.Config{
@@ -28,7 +69,7 @@ func main() {
 		AllowCredentials: true,
 	}))
 
-	r.Static("/images", "./backend/static/images")
+	r.StaticFS("/images", http.FS(imagesFS))
 
 	api := r.Group("/api")
 	{
