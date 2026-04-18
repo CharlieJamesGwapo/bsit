@@ -1,16 +1,28 @@
 package main
 
 import (
+	"os"
+
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"moist-cit-website/backend/handlers"
 )
 
 func main() {
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
+
+	allowed := os.Getenv("ALLOWED_ORIGIN")
+	if allowed == "" {
+		allowed = "http://localhost:5173"
+	}
+
 	r := gin.Default()
 
 	r.Use(cors.New(cors.Config{
-		AllowOrigins:     []string{"http://localhost:5173"},
+		AllowOrigins:     []string{allowed},
 		AllowMethods:     []string{"GET", "POST"},
 		AllowHeaders:     []string{"Content-Type"},
 		AllowCredentials: true,
@@ -28,5 +40,5 @@ func main() {
 		api.POST("/contact", handlers.PostContact)
 	}
 
-	r.Run(":8080")
+	r.Run(":" + port)
 }
