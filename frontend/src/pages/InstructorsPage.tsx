@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import InstructorCard from "../components/InstructorCard";
 import SectionHeader from "../components/SectionHeader";
 import type { Instructor } from "../types";
+import { api } from "../lib/api";
 
 function useInView(ref: React.RefObject<HTMLElement | null>) {
   const [inView, setInView] = useState(false);
@@ -30,7 +31,7 @@ export default function InstructorsPage() {
   const ctaVisible = useInView(ctaRef);
 
   useEffect(() => {
-    fetch("/api/instructors")
+    fetch(api("/api/instructors"))
       .then((r) => r.json())
       .then(setInstructors)
       .catch(() => {})

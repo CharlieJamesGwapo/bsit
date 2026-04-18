@@ -1,5 +1,6 @@
 import { useState } from "react";
 import type { ContactFormData } from "../types";
+import { api } from "../lib/api";
 
 export default function ContactForm() {
   const [form, setForm] = useState<ContactFormData>({ name: "", email: "", subject: "", message: "" });
@@ -21,7 +22,7 @@ export default function ContactForm() {
     if (!validate()) return;
     setStatus("sending");
     try {
-      const res = await fetch("/api/contact", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(form) });
+      const res = await fetch(api("/api/contact"), { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(form) });
       if (!res.ok) throw new Error();
       setStatus("success");
       setForm({ name: "", email: "", subject: "", message: "" });

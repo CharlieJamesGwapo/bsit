@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import CountdownTimer from "../components/CountdownTimer";
 import type { Event } from "../types";
+import { api } from "../lib/api";
 
 const categoryStyles: Record<string, string> = {
   academic: "bg-teal/10 text-teal border-teal/20",
@@ -16,7 +17,7 @@ export default function EventDetailPage() {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    fetch(`/api/events/${id}`)
+    fetch(api(`/api/events/${id}`))
       .then((r) => { if (!r.ok) throw new Error("Not found"); return r.json(); })
       .then(setEvent)
       .catch(() => setEvent(null))

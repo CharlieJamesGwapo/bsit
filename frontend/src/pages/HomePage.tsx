@@ -5,6 +5,7 @@ import SectionHeader from "../components/SectionHeader";
 import EventCard from "../components/EventCard";
 import InstructorCard from "../components/InstructorCard";
 import type { Event, Instructor, CollegeInfo } from "../types";
+import { api } from "../lib/api";
 
 function useInView(ref: React.RefObject<HTMLElement | null>) {
   const [inView, setInView] = useState(false);
@@ -70,9 +71,9 @@ export default function HomePage() {
   const contactVisible = useInView(contactRef);
 
   useEffect(() => {
-    fetch("/api/events").then((r) => r.json()).then(setEvents).catch(() => {});
-    fetch("/api/instructors").then((r) => r.json()).then(setInstructors).catch(() => {});
-    fetch("/api/info").then((r) => r.json()).then(setInfo).catch(() => {});
+    fetch(api("/api/events")).then((r) => r.json()).then(setEvents).catch(() => {});
+    fetch(api("/api/instructors")).then((r) => r.json()).then(setInstructors).catch(() => {});
+    fetch(api("/api/info")).then((r) => r.json()).then(setInfo).catch(() => {});
   }, []);
 
   const upcomingEvents = [...events]

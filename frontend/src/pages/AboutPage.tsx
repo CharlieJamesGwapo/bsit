@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import SectionHeader from "../components/SectionHeader";
 import type { CollegeInfo } from "../types";
+import { api } from "../lib/api";
 
 function useInView(ref: React.RefObject<HTMLElement | null>) {
   const [inView, setInView] = useState(false);
@@ -51,7 +52,7 @@ export default function AboutPage() {
   const ctaVisible = useInView(ctaRef);
 
   useEffect(() => {
-    fetch("/api/info")
+    fetch(api("/api/info"))
       .then((r) => r.json())
       .then(setInfo)
       .catch(() => {});

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import type { Event } from "../types";
+import { api } from "../lib/api";
 
 export default function HeroSection() {
   const [events, setEvents] = useState<Event[]>([]);
@@ -8,7 +9,7 @@ export default function HeroSection() {
   const [countdown, setCountdown] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
   useEffect(() => {
-    fetch("/api/events").then((r) => r.json()).then(setEvents).catch(() => {});
+    fetch(api("/api/events")).then((r) => r.json()).then(setEvents).catch(() => {});
     requestAnimationFrame(() => setTimeout(() => setLoaded(true), 50));
   }, []);
 

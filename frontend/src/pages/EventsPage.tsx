@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import Timeline from "../components/Timeline";
 import EventCard from "../components/EventCard";
 import type { Event } from "../types";
+import { api } from "../lib/api";
 
 type CategoryFilter = "all" | "academic" | "sports" | "cultural";
 
@@ -27,7 +28,7 @@ export default function EventsPage() {
   const gridVisible = useInView(gridRef);
 
   useEffect(() => {
-    fetch("/api/events").then((r) => r.json()).then(setEvents).catch(() => {});
+    fetch(api("/api/events")).then((r) => r.json()).then(setEvents).catch(() => {});
     requestAnimationFrame(() => setTimeout(() => setLoaded(true), 50));
   }, []);
 
