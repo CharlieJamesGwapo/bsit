@@ -3,6 +3,7 @@ package main
 import (
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
+	"moist-cit-website/backend/handlers"
 )
 
 func main() {
@@ -19,9 +20,12 @@ func main() {
 
 	api := r.Group("/api")
 	{
-		api.GET("/ping", func(c *gin.Context) {
-			c.JSON(200, gin.H{"message": "pong"})
-		})
+		api.GET("/events", handlers.GetEvents)
+		api.GET("/events/:id", handlers.GetEventByID)
+		api.GET("/instructors", handlers.GetInstructors)
+		api.GET("/instructors/:id", handlers.GetInstructorByID)
+		api.GET("/info", handlers.GetInfo)
+		api.POST("/contact", handlers.PostContact)
 	}
 
 	r.Run(":8080")

@@ -1,0 +1,24 @@
+# OS
+.DS_Store
+
+# Node
+node_modules/
+frontend/node_modules/
+frontend/dist/
+
+# Go build output
+app
+backend/app
+
+# Local env
+.env
+.env.local
+frontend/.env.local
+
+# Vercel
+.vercel/
+frontend/.vercel/
+
+# Editor
+.vscode/
+.idea/

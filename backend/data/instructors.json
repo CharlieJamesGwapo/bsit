@@ -1,0 +1,58 @@
+[
+  {
+    "id": "tahir-aziz",
+    "name": "Tahir Aziz",
+    "position": "Dean",
+    "specialization": "Information Technology",
+    "photo": "Tahir_Aziz(DEAN).jpg"
+  },
+  {
+    "id": "rockie-oga",
+    "name": "Rockie Oga",
+    "position": "Program Head",
+    "specialization": "Information Technology",
+    "photo": "Rockie_Oga(Program Head).jpg"
+  },
+  {
+    "id": "amelou-s-macas",
+    "name": "Amelou S. Macas",
+    "position": "Part-Time Instructor",
+    "specialization": "Information Technology",
+    "photo": "amelou_s.macas.jpg"
+  },
+  {
+    "id": "junrey-g-poblete",
+    "name": "Junrey G. Poblete",
+    "position": "Part-Time Instructor",
+    "specialization": "Information Technology",
+    "photo": "junrey_g_poblete.jpg"
+  },
+  {
+    "id": "bernie-acdal",
+    "name": "Bernie Acdal",
+    "position": "Instructor",
+    "specialization": "Information Technology",
+    "photo": "bernie_acdal.png"
+  },
+  {
+    "id": "melan-a-zaballero",
+    "name": "Melan A. Zaballero",
+    "position": "Instructor",
+    "specialization": "Information Technology",
+    "photo": "melan_a_zaballero.jpg"
+  },
+  {
+    "id": "jireh-moses",
+    "name": "Moses Jireh Lozano",
+    "position": "Instructor / Jr. Programmer",
+    "specialization": "Information Technology",
+    "photo": "moses_jireh_lozano.jpeg"
+  },
+  {
+    "id": "carlo-fuertes",
+    "name": "Carlo Fuertes",
+    "position": "Sr. Programmer",
+    "specialization": "Information Technology",
+    "photo": "logo.jpg"
+  }
+]

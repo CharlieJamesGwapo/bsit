@@ -1,0 +1,125 @@
+[
+  {
+    "id": "crimping-contest",
+    "name": "Crimping Contest",
+    "category": "academic",
+    "date": "2026-04-17",
+    "startTime": "08:00",
+    "endTime": "09:00",
+    "venue": "MOIST RPV Gym",
+    "description": "Test your speed, accuracy, and cable-making skills!",
+    "mechanics": [
+      "All materials (LAN cable, RJ45 connectors, and tools) will be provided by the department.",
+      "Participants are required to create a properly crimped Ethernet cable following the assigned standard (T568A or T568B).",
+      "The competition will evaluate both speed and accuracy in cable crimping.",
+      "Each completed cable will be tested using a cable tester to verify functionality.",
+      "Only cables that pass all tests and are fully functional will be considered valid.",
+      "The first participant to successfully complete and pass the cable test will be declared the winner."
+    ],
+    "image": "crimpping.jpg"
+  },
+  {
+    "id": "programming-contest",
+    "name": "Programming Contest",
+    "category": "academic",
+    "date": "2026-04-17",
+    "startTime": "09:00",
+    "endTime": "12:00",
+    "venue": "MOIST RPV Gym",
+    "description": "Test your logic, coding speed, and problem-solving skills!",
+    "mechanics": [
+      "Participants must solve the given programming problems within the allotted time.",
+      "Only approved programming languages may be used.",
+      "Outside assistance is not allowed.",
+      "The first participant to correctly complete all required problems will be declared the winner.",
+      "Final submissions must be made before the time limit.",
+      "Only correct and fully functional solutions will be considered valid."
+    ],
+    "image": "programming.jpg"
+  },
+  {
+    "id": "duet-singing",
+    "name": "Duet Singing Contest",
+    "category": "cultural",
+    "date": "2026-04-17",
+    "startTime": "10:00",
+    "endTime": "12:00",
+    "venue": "RPV Gym",
+    "description": "Let's watch and listen! Show your vocal talent in this duet singing competition.",
+    "mechanics": [
+      "Each entry must consist of two performers (duet).",
+      "Song choice is open to any genre.",
+      "Performances will be judged on vocal quality, harmony, and stage presence.",
+      "Each team must have a representative."
+    ],
+    "image": "duet.jpg"
+  },
+  {
+    "id": "dance-competition",
+    "name": "Dance Competition",
+    "category": "cultural",
+    "date": "2026-04-17",
+    "startTime": "15:00",
+    "endTime": "17:00",
+    "venue": "RPV Gym",
+    "description": "Open style dance competition — show your moves!",
+    "mechanics": [
+      "Category: Open Style.",
+      "Minimum performance time of 3 minutes.",
+      "Each team must have a representative.",
+      "Performances will be judged on creativity, synchronization, and entertainment value."
+    ],
+    "image": "dance.jpg"
+  },
+  {
+    "id": "basketball-tournament",
+    "name": "Basketball Tournament",
+    "category": "sports",
+    "date": "2026-04-18",
+    "startTime": "08:00",
+    "endTime": "12:00",
+    "venue": "MOIST Court",
+    "description": "Basketball men with muse — each team must have a representative!",
+    "mechanics": [
+      "Basketball Men with Muse(Men).",
+      "Each team must have a representative.",
+      "Standard basketball rules apply.",
+      "Champion prize will be awarded."
+    ],
+    "image": "basketball.jpg"
+  },
+  {
+    "id": "counterstrike-tournament",
+    "name": "Counter-Strike Source Tournament",
+    "category": "sports",
+    "date": "2026-04-18",
+    "startTime": "13:00",
+    "endTime": "15:00",
+    "venue": "Comlab",
+    "description": "Compete in Counter-Strike Source for the championship!",
+    "mechanics": [
+      "Participants may form teams with members from any year level, section, or group.",
+      "Teams are not restricted to pre-assigned groups.",
+      "Standard Counter-Strike Source competitive rules apply.",
+      "Champion prize will be awarded."
+    ],
+    "image": "counterstrike.jpg"
+  },
+  {
+    "id": "family-feud",
+    "name": "Family Feud",
+    "category": "cultural",
+    "date": "2026-04-18",
+    "startTime": "16:30",
+    "endTime": "17:30",
+    "venue": "RPV Gym",
+    "description": "The classic game show — test your knowledge and teamwork!",
+    "mechanics": [
+      "Each team must have 5 representatives and 1 instructor.",
+      "Standard Family Feud rules apply.",
+      "Questions will cover general knowledge and IT-related topics.",
+      "Champion prize will be awarded."
+    ],
+    "image": "familyfeud.jpg"
+  }
+]
